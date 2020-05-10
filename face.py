@@ -12,7 +12,7 @@ IMAGE_SIZE =(50,50)
 def createDatabase(path):
     # 查看路径下所有文件
     tu_train = os.listdir(path)
-    # 计算有几个文件（图片命名都是以 序号.jpg方式）减去Thumbs.db
+  
     number = len(tu_train) -1
     T = []
     # 把所有图片转为1-D并存入T中
@@ -64,7 +64,7 @@ def recognize(testImage, eigenface,m,A):
   
     minDistance = min(distance)
     index = distance.index(minDistance)
-    cv.imshow("recognize result",cv.imread('C:/Users/mimilam/Desktop/资料/Eigenface-master/TrainDatabase/'+ str(index+1 )+ '.jpg',cv.IMREAD_GRAYSCALE))
+    cv.imshow("recognize result",cv.imread('C:/Users/mimilam/Desktop/资料/Eigenface-master/TrainDatabase/'+ str(index+1 )+ '.bmp',cv.IMREAD_GRAYSCALE))
     cv.waitKey()
     return index+1
 # 进行人脸识别主程序
@@ -84,7 +84,7 @@ def gui():
     def select():
         filename = tkinter.filedialog.askopenfilename()
         if filename != '':
-            s=filename # jpg图片文件名 和 路径。
+            s=filename # bmp图片文件名 和 路径。
             im=Image.open(s)
             tkimg=ImageTk.PhotoImage(im) # 执行此函数之前， Tk() 必须已经实例化。
             l.config(image=tkimg)
