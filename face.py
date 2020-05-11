@@ -1,13 +1,13 @@
 '''
 运行有点问题，有空去修改
-''''
+'''
 import re
 import numpy as np
 import cv2 as cv
 import os
 import tkinter as tk
 import tkinter.filedialog
-from PIL import Image, ImageTk
+from pil import Image, ImageTk
 IMAGE_SIZE =(50,50)
 def createDatabase(path):
     # 查看路径下所有文件
