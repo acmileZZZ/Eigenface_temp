@@ -15,15 +15,15 @@ def createDatabase(path):
   
     number = len(tu_train) -1
     T = []
-    # 把所有图片转为1-D并存入T中
+    # 把所有图片转为一位并存入T中
     for i in range(1,number+1):
         image = cv.imread(path+'/'+str(i)+'.jpg',cv.IMREAD_GRAYSCALE)
         image=cv.resize(image,IMAGE_SIZE)
-        # 转为1-D
+        # 转为一位
         image = image.reshape(image.size,1)
         T.append(image)        
     T = np.array(T)
-    # 不能直接T.reshape(T.shape[1],T.shape[0]) 这样会打乱顺序，
+   
     T = T.reshape(T.shape[0],T.shape[1])
     return np.mat(T).T
  
